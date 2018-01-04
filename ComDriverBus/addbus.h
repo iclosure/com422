@@ -1,0 +1,18 @@
+
+#ifndef _COM422_ADD_BUS_DEVICE_H_
+#define _COM422_ADD_BUS_DEVICE_H_
+
+EVT_WDF_DRIVER_DEVICE_ADD      EvtDriverDeviceAdd;
+EVT_WDF_DEVICE_CONTEXT_CLEANUP EvtFdoBusContextCleanup;
+
+NTSTATUS WdfDevicePropertyString(
+	IN OUT PUNICODE_STRING PropertyString,
+	IN PWDFDEVICE_INIT DeviceInit,
+	IN DEVICE_REGISTRY_PROPERTY Property);
+
+// FDO event
+EVT_WDF_DEVICE_FILTER_RESOURCE_REQUIREMENTS EvtDeviceFilterAddResourceRequirements;
+EVT_WDF_DEVICE_FILTER_RESOURCE_REQUIREMENTS EvtDeviceFilterRemoveResourceRequirements;
+EVT_WDF_DEVICE_REMOVE_ADDED_RESOURCES		EvtDeviceRemoveAddedResources;
+
+#endif	// _COM422_ADD_BUS_DEVICE_H_

@@ -1,0 +1,190 @@
+; 
+; target : CrdSerPort
+; 
+; Copyright (C) 2011 - 2014 CRDTech Inc. All Right Reserved.
+;
+; -------------------------------------------------------------
+
+[Version]
+CatalogFile=CrdSerPort.cat
+signature = "$WINDOWS NT$"
+Class     = %ClassName%
+ClassGuid = {4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider  = %ProviderName%
+DriverVer =06/23/2014,1.0.0002.00814
+
+[ClassInstall32]
+Addreg = DeviceClassReg
+
+[DeviceClassReg]
+HKR,,,0,%DeviceClassName%
+HKR,,Icon,,-26
+
+[Manufacturer]
+%ProviderName% = CrdSerPort,NT$ARCH$, NTamd64
+
+[CrdSerPort.NT$ARCH$]
+%port_0% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO000, CrdSerPort
+%port_1% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO001, CrdSerPort
+%port_2% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO002, CrdSerPort
+%port_3% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO003, CrdSerPort
+%port_4% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO004, CrdSerPort
+%port_5% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO005, CrdSerPort
+%port_6% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO006, CrdSerPort
+%port_7% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO007, CrdSerPort
+%port_8% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO008, CrdSerPort
+%port_9% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO009, CrdSerPort
+%port_10% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO010, CrdSerPort
+%port_11% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO011, CrdSerPort
+%port_12% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO012, CrdSerPort
+%port_13% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO013, CrdSerPort
+%port_14% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO014, CrdSerPort
+%port_15% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO015, CrdSerPort
+
+[CrdSerPort.NTamd64]
+%port_0% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO000, CrdSerPort
+%port_1% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO001, CrdSerPort
+%port_2% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO002, CrdSerPort
+%port_3% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO003, CrdSerPort
+%port_4% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO004, CrdSerPort
+%port_5% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO005, CrdSerPort
+%port_6% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO006, CrdSerPort
+%port_7% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO007, CrdSerPort
+%port_8% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO008, CrdSerPort
+%port_9% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO009, CrdSerPort
+%port_10% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO010, CrdSerPort
+%port_11% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO011, CrdSerPort
+%port_12% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO012, CrdSerPort
+%port_13% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO013, CrdSerPort
+%port_14% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO014, CrdSerPort
+%port_15% = CrdSerPort_Inst, CrdSerial\CrdSerPortOJO015, CrdSerPort
+
+[CrdSerPort_Inst]
+AddReg = CrdSerPort_AddReg
+CopyFiles = CrdSerPort_Inst.CopyFiles, CrdSerPort_Inst.CopyFilesProp
+
+[CrdSerPort_Inst.HW]
+AddReg = CrdSerPort_HW.AddReg
+
+[CrdSerPort_HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"serenum"
+
+[CrdSerPort_Inst.Services]
+AddService = CrdSerPort,%SPSVCINST_ASSOCSERVICE%,CrdSerPort_Service_Inst,CrdSerPort_EventLog_Inst
+	
+[CrdSerPort_Inst.CopyFiles]
+CrdSerPort.sys
+
+[CrdSerPort_Inst.CopyFilesProp]
+crdcomprop.dll,,,2
+
+; -------------------------------------------------------------
+; Service Section
+; -------------------------------------------------------------
+
+[CrdSerPort_Service_Inst]
+DisplayName   = %CrdPortSvcName%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\CrdSerPort.sys
+LoadOrderGroup= Extended base
+
+; -------------------------------------------------------------
+; Port Event Log Installation Section
+; -------------------------------------------------------------
+
+[CrdSerPort_EventLog_Inst]
+AddReg = CrdSerPort_EventLog_AddReg
+
+[CrdSerPort_EventLog_AddReg]
+HKR,,EventMessageFile,%REG_EXPAND_SZ%,"%11%\IoLogMsg.dll;%12%\CrdSerPort.sys"
+HKR,,TypesSupported,%REG_DWORD%,7
+
+; -------------------------------------------------------------
+; Registry installation
+; -------------------------------------------------------------
+
+[CrdSerPort_AddReg]
+;root, subkey,           valuename,        flags,        value
+HKR,Parameters,,%REG_BINARY%,0
+HKR,,PortDriver,,CrdSerPort.sys
+HKR,,EnumPropPages32,,"crdcomprop.dll,ComPortPropPageProvider"
+
+; -------------------------------------------------------------
+; SourceDisksFiles Section
+; -------------------------------------------------------------
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,,
+
+[SourceDisksFiles]
+CrdSerPort.sys=1,,
+crdcomprop.dll=1,,
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll = 1
+
+; -------------------------------------------------------------
+; DestinationDirs Section
+; -------------------------------------------------------------
+
+[DestinationDirs]
+CoInstallers_CopyFiles = 11
+DefaultDestDir = 11
+CrdSerPort_Inst.CopyFiles = 12
+CrdSerPort_Inst.CopyFilesProp = 11
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll = 2
+
+; --------------------------------------------------------
+; WDF Coinstaller Port Installing Section
+; --------------------------------------------------------
+
+[CrdSerPort_Inst.Wdf]
+KmdfService =  CrdSerPort, CrdSerPort_Inst.KmdfService
+
+[CrdSerPort_Inst.KmdfService]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[CrdSerPort_Inst.CoInstallers]
+AddReg    = CoInstaller_AddReg
+CopyFiles = CoInstaller_CopyFiles
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll, WdfCoInstaller"
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+; --------------------------------------------------------
+; Strings Section
+; --------------------------------------------------------
+
+[Strings]
+ProviderName = "CRDTech Inc."
+ClassName = "Ports"
+DeviceClassName = "CRDTech Series"
+
+SPSVCINST_ASSOCSERVICE = 0x00000002
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+SERVICE_KERNEL_DRIVER  = 0x00000001
+SERVICE_AUTO_START     = 0x00000002
+SERVICE_DEMAND_START   = 0x00000003
+SERVICE_ERROR_NORMAL   = 0x00000001
+REG_BINARY             = 1
+
+port_0 = "CRDTech Communication Port 1"
+port_1 = "CRDTech Communication Port 2"
+port_2 = "CRDTech Communication Port 3"
+port_3 = "CRDTech Communication Port 4"
+port_4 = "CRDTech Communication Port 5"
+port_5 = "CRDTech Communication Port 6"
+port_6 = "CRDTech Communication Port 7"
+port_7 = "CRDTech Communication Port 8"
+port_8 = "CRDTech Communication Port 9"
+port_9 = "CRDTech Communication Port 10"
+port_10 = "CRDTech Communication Port 11"
+port_11 = "CRDTech Communication Port 12"
+port_12 = "CRDTech Communication Port 13"
+port_13 = "CRDTech Communication Port 14"
+port_14 = "CRDTech Communication Port 15"
+port_15 = "CRDTech Communication Port 16"

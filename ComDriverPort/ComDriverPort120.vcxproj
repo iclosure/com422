@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="objchk_win7_x86|Win32">
+      <Configuration>objchk_win7_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="objchk_wxp_x86|Win32">
+      <Configuration>objchk_wxp_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="objfre_win7_x86|Win32">
+      <Configuration>objfre_win7_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="objfre_wxp_x86|Win32">
+      <Configuration>objfre_wxp_x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="SmartDriver_Debug|Win32">
+      <Configuration>SmartDriver_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>ComDriverPort</ProjectName>
+    <ProjectGuid>{1FD0EC04-8E27-4D24-8B8F-7C30359B5CA7}</ProjectGuid>
+    <RootNamespace>ComDriverPort</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='objchk_win7_x86|Win32'">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SmartDriver_Debug|Win32'" Label="Configuration">
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+    <KMDF_VERSION_MAJOR>1</KMDF_VERSION_MAJOR>
+    <KMDF_VERSION_MINOR>9</KMDF_VERSION_MINOR>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objchk_wxp_x86|Win32'" Label="Configuration">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_win7_x86|Win32'" Label="Configuration">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_wxp_x86|Win32'" Label="Configuration">
+    <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60610.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objchk_win7_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk win7 x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk win7 x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk win7 x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;DBG;_WIN32_WINNT=0x0500;COM422_DRIVER_PORT</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='SmartDriver_Debug|Win32'">
+    <OutDir>$(IntDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk win7 x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk win7 x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk win7 x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;DBG;_WIN32_WINNT=0x0500;COM422_DRIVER_PORT</NMakePreprocessorDefinitions>
+    <TargetName>CrdSerPort</TargetName>
+    <TargetExt>.sys</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objchk_wxp_x86|Win32'">
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk wxp x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk wxp x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort chk wxp x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;DBG;_WIN32_WINNT=0x0500;COM422_DRIVER_PORT</NMakePreprocessorDefinitions>
+    <OutDir>$(ProjectDir)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_win7_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort fre win7 x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort fre win7 x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort fre win7 x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;_WIN32_WINNT=0x0500;COM422_DRIVER_PORT</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='objfre_wxp_x86|Win32'">
+    <OutDir>$(ProjectDir)</OutDir>
+    <NMakeBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort fre wxp x86</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort fre wxp x86 -rebuild</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(SMARTKITS_HOME)"\Bin\skbuild.exe -drv "$(SolutionDir)\" "$(ProjectDir)\" CrdSerPort fre wxp x86 -clear</NMakeCleanCommandLine>
+    <NMakeIncludeSearchPath>$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\wdf\kmdf\1.9;$(SMARTKITS_HOME)\Kernel\krnlcom\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>_X86_;_WIN32_WINNT=0x0500;COM422_DRIVER_PORT</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objchk_win7_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='SmartDriver_Debug|Win32'">
+    <BuildLog>
+      <Path>$(IntDir)$(MSBuildProjectName).log</Path>
+    </BuildLog>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SMARTKITS_DIRS)\kernel\krnlcom\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <PreprocessorDefinitions>_X86_=1;i386=1;DBG;STD_CALL;EVENT_TRACING;COM422_DRIVER_PORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(DDK_LIB_PATH)\ntstrsafe.lib;$(DDK_LIB_PATH)\rtlver.lib;$(SMARTKITS_DIRS)\kernel\krnlcom\lib\objchk_wxp_x86\i386\krnlcomd.lib</AdditionalDependencies>
+    </Link>
+    <Link>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <MapFileName>$(TargetName)</MapFileName>
+      <SubSystem>Native</SubSystem>
+      <Driver>WDM</Driver>
+      <MinimumRequiredVersion>$(SUBSYSTEM_NATVER)</MinimumRequiredVersion>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_X86_=1;i386=1;STD_CALL;EVENT_TRACING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);$(SDK_INC_PATH);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objchk_wxp_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objfre_win7_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='objfre_wxp_x86|Win32'">
+    <BuildLog>
+      <Path />
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="adddev.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="file.h" />
+    <ClInclude Include="ioctl.h" />
+    <ClInclude Include="pnp.h" />
+    <ClInclude Include="power.h" />
+    <ClInclude Include="precomp.h" />
+    <ClInclude Include="timeout.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="waitmask.h" />
+    <ClInclude Include="wmi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="adddev.c" />
+    <ClCompile Include="entry.c" />
+    <ClCompile Include="file.c" />
+    <ClCompile Include="ioctl.c" />
+    <ClCompile Include="pnp.c" />
+    <ClCompile Include="power.c" />
+    <ClCompile Include="read.c" />
+    <ClCompile Include="timeout.c" />
+    <ClCompile Include="waitmask.c" />
+    <ClCompile Include="wmi.c" />
+    <ClCompile Include="write.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="buildex.bat" />
+    <Inf Include="CrdSerPort.inx">
+      <FileType>Document</FileType>
+    </Inf>
+    <None Include="sources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ComDriverPort.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(SolutionDir)\Debug\crdcomprop.dll" Condition="'$(Configuration)|$(Platform)'=='SmartDriver_Debug|Win32'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+    <FilesToPackage Include="$(TargetPath)" Condition="'$(Configuration)|$(Platform)'=='SmartDriver_Debug|Win32'">
+      <PackageRelativeDirectory>
+      </PackageRelativeDirectory>
+    </FilesToPackage>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,105 @@
+; 
+; target : CrdSerBus
+; 
+; Copyright (C) 2011-2014 CRDTech Inc. All Right Reserved.
+;
+; -------------------------------------------------------------
+
+[Version]
+CatalogFile=CrdSerBus.cat
+signature = "$WINDOWS NT$"
+Class     = MultiPortSerial
+ClassGuid = {50906cb8-ba12-11d1-bf5d-0000f805f530}
+Provider  = %ProviderName%
+DriverVer =06/23/2014,1.0.0002.00814
+
+[ClassInstall32]
+Addreg = DeviceClassReg
+
+[DeviceClassReg]
+HKR,,,0,%DeviceClassName%
+HKR,,Icon,,-5
+
+[Manufacturer]
+%ProviderName%=CrdSerBus, NT$ARCH$, NTia64, NTamd64
+
+[CrdSerBus]
+%C422.DeviceDesc% = CrdSerBus_Inst,PCI\VEN_BE00&DEV_1080&SUBSYS_90540422&REV_01
+
+[CrdSerBus.NT$ARCH$]
+%C422.DeviceDesc% = CrdSerBus_Inst,PCI\VEN_BE00&DEV_1080&SUBSYS_90540422&REV_01
+
+[CrdSerBus.NTamd64]
+%C422.DeviceDesc% = CrdSerBus_Inst,PCI\VEN_BE00&DEV_1080&SUBSYS_90540422&REV_01
+
+[CrdSerBus.NTia64]
+%C422.DeviceDesc% = CrdSerBus_Inst,PCI\VEN_BE00&DEV_1080&SUBSYS_90540422&REV_01
+
+[CrdSerBus_Inst]
+AddReg = CrdSerBus_Inst_AddReg
+CopyFiles = CrdSerBus_Inst.CopyFiles, CrdSerBus_Inst.CopyFilesProp
+
+[CrdSerBus_Inst.Services]
+AddService = CrdSerBus, 0x00000002,CrdSerBus_Inst.SvcInstall,CrdSerBus_Inst.AddEvtLog
+
+[CrdSerBus_Inst_AddReg]
+HKR,Parameters,,%REG_BINARY%,0
+HKR,,EnumPropPages32,,"crdcomprop.dll,ComBusPropPageProvider"
+
+[CrdSerBus_Inst.CopyFiles]
+CrdSerBus.sys,,
+
+[CrdSerBus_Inst.CopyFilesProp]
+crdcomprop.dll,,,2
+
+[CrdSerBus_Inst.SvcInstall]
+DisplayName   = %C422.ServiceDesc%
+ServiceType   = 1
+StartType     = 3
+ErrorControl  = 1
+ServiceBinary = %12%\CrdSerBus.sys
+LoadOrderGroup= Extended base
+
+[CrdSerBus_Inst.AddEvtLog]
+
+;----------------------------------------------------------------------------
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,,
+
+[SourceDisksFiles]
+CrdSerBus.sys	=1,,
+CrdSerPort.sys	=1,,
+crdcomprop.dll	=1,,
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll = 1
+
+[DestinationDirs]
+CoInstallers_CopyFiles = 11
+CrdSerBus_Inst.CopyFiles = 12
+CrdSerBus_Inst.CopyFilesProp = 11
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll = 2
+
+[CrdSerBus_Inst.CoInstallers]
+CopyFiles = CoInstaller_CopyFiles
+AddReg = CoInstaller_AddReg
+
+[CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[CrdSerBus_Inst.Wdf]
+KmdfService = CrdSerBus,CrdSerBus_Inst.KmdfService
+
+[CrdSerBus_Inst.KmdfService]
+KmdfLibraryVersion = $KMDFVERSION$
+
+;----------------------------------------------------------------------------
+
+[Strings]
+ProviderName= "CRDTech Inc."
+C422.DeviceDesc = "CRDTech C422 Series (PCI BUS)"
+C422.ServiceDesc= "CRDTech C422 Smartio/Industio Driver (PCI BUS)"
+DISK_NAME= "CRDTech C422 Install Disk"
+DeviceClassName= "CRDTech Series"

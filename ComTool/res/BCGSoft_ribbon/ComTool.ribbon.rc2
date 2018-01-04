@@ -1,0 +1,28 @@
+// BCGSoft Designer automatically generated file.
+// Do not edit.
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// BCGP_RIBBON_XML
+//
+
+IDR_BCGP_RIBBON_XML BCGP_RIBBON_XML "res\\BCGSoft_ribbon\\ribbon.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDR_BCGP_IMAGE_RIBBON_BAR PNG "res\\BCGSoft_ribbon\\ribbon_bar.png"
+IDR_BCGP_IMAGE_MAIN PNG "res\\BCGSoft_ribbon\\main.png"
+IDR_BCGP_IMAGE_MAIN_SCENIC PNG "res\\BCGSoft_ribbon\\main_scenic.png"
+IDR_BCGP_IMAGE_CATEGORY_BACKSTAGE_SMALL PNG "res\\BCGSoft_ribbon\\category_backstage_small.png"
+IDR_BCGP_IMAGE_CATEGORY_SMALL_0 PNG "res\\BCGSoft_ribbon\\category_small_0.png"
+IDR_BCGP_IMAGE_CATEGORY_LARGE_0 PNG "res\\BCGSoft_ribbon\\category_large_0.png"
+IDR_BCGP_IMAGE_STATUS_BAR PNG "res\\BCGSoft_ribbon\\status_bar.png"
+IDR_BCGP_IMAGE_STATUS_GROUP_0 PNG "res\\BCGSoft_ribbon\\status_group_0.png"

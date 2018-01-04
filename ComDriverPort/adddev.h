@@ -1,0 +1,7 @@
+
+#ifndef _COM422_ADD_PORT_DEVICE_H_
+#define _COM422_ADD_PORT_DEVICE_H_
+
+DRIVER_ADD_DEVICE	AddDevice;
+
+#endif	// _COM422_ADD_PORT_DEVICE_H_

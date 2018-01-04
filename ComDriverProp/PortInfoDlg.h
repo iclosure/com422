@@ -1,0 +1,3 @@
+#pragma once
+
+INT_PTR CALLBACK PortInfoDlgProc(HWND, UINT, WPARAM, LPARAM);

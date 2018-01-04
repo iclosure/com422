@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ELEMENTS>
+	<ELEMENT>
+		<DESCRIPTION>Add ribbon to the main frame class</DESCRIPTION>
+		<CODE>
+			<LINE>// Add the the following code in MainFrm.h file.</LINE>
+			<LINE></LINE>
+			<LINE>// The ribbon bar definition in your CMainFrame class:</LINE>
+			<LINE>CBCGPRibbonBar m_wndRibbonBar;</LINE>
+			<LINE></LINE>
+			<LINE>// Add the the following code in MainFrm.cpp file</LINE>
+			<LINE>// in CMainFrame::OnCreate.</LINE>
+			<LINE></LINE>
+			<LINE>// Create and initialize the ribbon bar in CMainFrame::OnCreate:</LINE>
+			<LINE>if (!m_wndRibbonBar.Create(this))</LINE>
+			<LINE>{</LINE>
+			<LINE>&#09;return -1;</LINE>
+			<LINE>}</LINE>
+		</CODE>
+	</ELEMENT>
+	<ELEMENT>
+		<DESCRIPTION>Add ribbon initialization to the main frame class</DESCRIPTION>
+		<CODE>
+			<LINE>// If Ribbon creation code is not present in CMainFrame::OnCreate</LINE> 
+			<LINE>// let's create it</LINE>
+			<LINE>if (!m_wndRibbonBar.Create(this))</LINE>
+			<LINE>{</LINE>
+			<LINE>&#09;return -1;</LINE>
+			<LINE>}</LINE>
+			<LINE>// Add the the following code in MainFrm.cpp file</LINE> 
+			<LINE>// right after m_wndRibbonBar.Create</LINE>
+			<LINE>// in CMainFrame::OnCreate.</LINE>
+			<LINE></LINE>
+			<LINE>if (!m_wndRibbonBar.LoadFromXML (_T(&quot;IDR_BCGP_RIBBON_XML&quot;)))</LINE>
+			<LINE>{</LINE>
+			<LINE>&#09;return -1;</LINE>
+			<LINE>}</LINE>
+			<LINE></LINE>
+			<LINE></LINE>
+			<LINE>// If your CMainFrame::OnCreate in MainFrm.cpp file already has</LINE>
+			<LINE>// the ribbon initialization code like call on CreateRibbonBar,</LINE>
+			<LINE>// then please comment it and use m_wndRibbonBar.LoadFromXML instead.</LINE>
+		</CODE>
+	</ELEMENT>
+	<ELEMENT>
+		<DESCRIPTION>Add files in “BCGSoft_ribbon” folder to your VC++ project</DESCRIPTION>
+		<CODE>
+			<LINE>// Designer has generated “BCGSoft_ribbon” files for you.</LINE>
+			<LINE>// You can find them in your project folder.</LINE>
+			<LINE>// Add “BCGSoft_ribbon” files to your VC++ project.</LINE>
+		</CODE>
+	</ELEMENT>
+</ELEMENTS>

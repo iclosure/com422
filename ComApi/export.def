@@ -1,0 +1,46 @@
+LIBRARY	"comapi"
+
+;SECTIONS
+;	.shared READ WRITE SHARED
+	
+EXPORTS
+	com_open
+	com_close
+	com_flush
+	com_lstatus
+	com_iqueue
+	com_oqueue
+	com_data_status
+	com_tx_hold
+	com_config
+	com_set_baudrate
+	com_get_baudrate
+	com_set_databits
+	com_get_databits
+	com_set_parity
+	com_get_parity
+	com_set_stopbits
+	com_get_stopbits
+	com_flowctrl
+	com_DTR
+	com_RTS
+	com_lctrl
+	com_getch
+	com_read
+	com_setReadTimeouts
+	com_getReadTimeouts
+	com_abort_read
+	com_putch
+	com_write
+	com_setWriteTimeouts
+	com_getWriteTimeouts
+	com_abort_write
+	com_term_irq
+	com_cnt_irq
+	com_modem_irq
+	com_break_irq
+	com_tx_empty_irq
+	com_break
+	com_break_ex
+	com_act_xon
+	com_act_xoff

@@ -1,0 +1,586 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1251)\r\n"
+    "#include ""res\\ComTool.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#include ""res\\BCGSoft_ribbon\\ComTool.ribbon.rc2""  // BCG Designer resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CHECK_NO            BITMAP                  ".\\res\\checkno.bmp"
+IDB_CHECK_NO32          BITMAP                  ".\\res\\checkno32.bmp"
+IDB_CHECK_YES           BITMAP                  ".\\res\\checkyes.bmp"
+IDB_CHECK_YES32         BITMAP                  ".\\res\\check32.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 431, 242
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 ComTool"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,5,5,20,20
+    LTEXT           "ComTool Version 1.0",IDC_LABEL_VERSION,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2013. CRDTech Inc.",IDC_LABEL_COPYRIGHT,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,366,5,60,16,WS_GROUP
+    CONTROL         "",IDC_REDIT_ABOUT,"RichEdit20W",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_BORDER | WS_VSCROLL | WS_TABSTOP,5,41,421,177
+    PUSHBUTTON      "http://www.crdtech.com",IDC_BUTTON_COMPANY_URL,5,223,101,14
+END
+
+IDD_GENERAL_CONFIG DIALOGEX 0, 0, 465, 273
+STYLE DS_SETFONT | WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,155,28,1,228
+    CONTROL         "",IDC_PATH_LABEL,"Static",SS_GRAYRECT | NOT WS_VISIBLE,5,4,139,28
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,36,139,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,110,139,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,186,139,1
+    LTEXT           "Put information about your application/document here",IDC_STATIC,165,46,101,205
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,166,36,172,1
+    CONTROL         "",IDC_INFO_LABEL,"Static",SS_GRAYRECT | NOT WS_VISIBLE,166,4,172,28
+    LTEXT           "语言：",IDC_LABEL_LANGUAGE,14,67,25,8
+    COMBOBOX        IDC_COMBO_LANGUAGE,44,65,94,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_OUTPUT DIALOGEX 0, 0, 526, 225
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "发送端",IDC_GROUP_TX,5,4,256,217,0,WS_EX_TRANSPARENT
+    GROUPBOX        "接收端",IDC_GROUP_RX,265,4,256,217,0,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_REDIT_TX_LOG,"RichEdit20W",WS_BORDER | WS_VSCROLL | WS_TABSTOP | 0x844,5,15,255,81
+    CONTROL         "",IDC_REDIT_RX_LOG,"RichEdit20W",WS_BORDER | WS_VSCROLL | WS_TABSTOP | 0x844,266,15,255,81
+    LTEXT           "数据格式：",IDC_LABEL_TX_DATA_FORMAT,9,209,41,8
+    COMBOBOX        IDC_COMBO_TX_DATA_FORMAT,52,207,51,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据格式：",IDC_LABEL_RX_DATA_FORMAT,268,209,41,8
+    COMBOBOX        IDC_COMBO_RX_DATA_FORMAT,311,207,51,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据拆解：",IDC_LABEL_TX_DATA_SPLIT,114,209,41,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_TX_DATA_SPLIT,157,207,51,30,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据拆解：",IDC_LABEL_RX_DATA_SPLIT,374,209,41,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_RX_DATA_SPLIT,417,207,51,30,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "清空缓冲",IDC_BN_TX_CLEAR_CACHE,210,206,50,14
+    PUSHBUTTON      "清空缓冲",IDC_BN_RX_CLEAR_CACHE,470,206,50,14
+    CONTROL         "",IDC_LIST_TX_DATA,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,5,97,255,107
+    CONTROL         "",IDC_LIST_RX_DATA,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,266,97,255,107
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 426
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_GENERAL_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 460
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 268
+    END
+
+    IDD_OUTPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 521
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 221
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_GENERAL_CONFIG DLGINIT
+BEGIN
+    IDC_COMBO_LANGUAGE, 0x403, 13, 0
+0xd0d6, 0xc4ce, 0xa8a3, 0xf2bc, 0xe5cc, 0xa9a3, "\000" 
+    0
+END
+
+IDD_OUTPUT DLGINIT
+BEGIN
+    IDC_COMBO_TX_DATA_FORMAT, 0x403, 7, 0
+0xcbb0, 0xf8bd, 0xc6d6, "\000" 
+    IDC_COMBO_TX_DATA_FORMAT, 0x403, 7, 0
+0xaeca, 0xf8bd, 0xc6d6, "\000" 
+    IDC_COMBO_TX_DATA_FORMAT, 0x403, 9, 0
+0xaeca, 0xf9c1, 0xf8bd, 0xc6d6, "\000" 
+    IDC_COMBO_RX_DATA_FORMAT, 0x403, 7, 0
+0xcbb0, 0xf8bd, 0xc6d6, "\000" 
+    IDC_COMBO_RX_DATA_FORMAT, 0x403, 7, 0
+0xaeca, 0xf8bd, 0xc6d6, "\000" 
+    IDC_COMBO_RX_DATA_FORMAT, 0x403, 9, 0
+0xaeca, 0xf9c1, 0xf8bd, 0xc6d6, "\000" 
+    IDC_COMBO_TX_DATA_SPLIT, 0x403, 9, 0
+0xfbd5, 0xe5cc, 0xe4ca, 0xf6b3, "\000" 
+    IDC_COMBO_TX_DATA_SPLIT, 0x403, 9, 0
+0xd6d7, 0xceb6, 0xf0b2, 0xd6b7, "\000" 
+    IDC_COMBO_RX_DATA_SPLIT, 0x403, 9, 0
+0xfbd5, 0xe5cc, 0xe4ca, 0xf6b3, "\000" 
+    IDC_COMBO_RX_DATA_SPLIT, 0x403, 9, 0
+0xd6d7, 0xceb6, 0xf0b2, 0xd6b7, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,4
+ PRODUCTVERSION 1,0,0,4
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080004e4"
+        BEGIN
+            VALUE "CompanyName", "创融达科技"
+            VALUE "FileDescription", "ComTool Test Workspace"
+            VALUE "FileVersion", "1.0.0.4"
+            VALUE "InternalName", "ComTool"
+            VALUE "LegalCopyright", "Copyright (c) 2013 CRDTech,All rights reserved."
+            VALUE "OriginalFilename", "ComTool.exe"
+            VALUE "ProductName", "ComTool Application"
+            VALUE "ProductVersion", "1.0.0.4"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x800, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ComTool.ico"
+IDR_ComToolTYPE      ICON                    "res\\ComToolDoc.ico"
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_RIBBON_FILELARGE    PNG                     "res\\ribbonfilelarge.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&Toolbars"
+        BEGIN
+            MENUITEM "",                            ID_VIEW_TOOLBARS
+        END
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        POPUP "&Application Look"
+        BEGIN
+            MENUITEM "Office &2000",                ID_VIEW_APPLOOK_2000
+            MENUITEM "Office &XP",                  ID_VIEW_APPLOOK_XP
+            MENUITEM "Office 200&3",                ID_VIEW_APPLOOK_2003
+            MENUITEM "Visual Studio 200&5",         ID_VIEW_APPLOOK_VS2005
+            MENUITEM "&Windows Native",             ID_VIEW_APPLOOK_WIN_XP
+            POPUP "Office 200&7"
+            BEGIN
+                MENUITEM "&Blue Style",                 ID_VIEW_APPLOOK_2007
+                MENUITEM "B&lack Style",                ID_VIEW_APPLOOK_2007_1
+                MENUITEM "&Silver Style",               ID_VIEW_APPLOOK_2007_2
+                MENUITEM "&Aqua Style",                 ID_VIEW_APPLOOK_2007_3
+            END
+            MENUITEM "Visual Studio 200&8",         ID_VIEW_APPLOOK_VS2008
+            MENUITEM "Visual Studio 20&10",         ID_VIEW_APPLOOK_VS2010
+            POPUP "Office 201&0"
+            BEGIN
+                MENUITEM "&Blue Style",                 ID_VIEW_APPLOOK_2010_1
+                MENUITEM "B&lack Style",                ID_VIEW_APPLOOK_2010_2
+                MENUITEM "&Silver Style",               ID_VIEW_APPLOOK_2010_3
+            END
+            MENUITEM "Window&s 7",                  ID_VIEW_APPLOOK_WIN7
+            POPUP "Visual Studi&o 2012"
+            BEGIN
+                MENUITEM "&Light Style",                ID_VIEW_APPLOOK_VS2012_LIGHT
+                MENUITEM "&Dark Style",                 ID_VIEW_APPLOOK_VS2012_DARK
+            END
+        END
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ComTool...",           ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_TOOLBAR MENU
+BEGIN
+    POPUP "DUMMY"
+    BEGIN
+        MENUITEM "Standard Toolbar",            ID_VIEW_TOOLBAR
+        MENUITEM "&Workspace",                  ID_VIEW_WORKSPACE
+        MENUITEM "&Workspace 2",                ID_VIEW_WORKSPACE2
+        MENUITEM "&Output",                     ID_VIEW_OUTPUT
+    END
+END
+
+IDR_PASTE_MENU MENU
+BEGIN
+    MENUITEM "&Paste",                      ID_EDIT_PASTE
+    MENUITEM "Paste &Special...",           ID_EDIT_PASTE_SPECIAL
+END
+
+IDR_THEME_MENU MENU
+BEGIN
+    MENUITEM "Office 2007 &Blue Theme",     ID_VIEW_APPLOOK_2007
+    MENUITEM "Office 2007 B&lack Theme",    ID_VIEW_APPLOOK_2007_1
+    MENUITEM "Office 2007 &Silver Theme",   ID_VIEW_APPLOOK_2007_2
+    MENUITEM "Office 2007 &Aqua Theme",     ID_VIEW_APPLOOK_2007_3
+    MENUITEM SEPARATOR
+    MENUITEM "Office 2010 Bl&ue Theme",     ID_VIEW_APPLOOK_2010_1
+    MENUITEM "Office 2010 Bla&ck Theme",    ID_VIEW_APPLOOK_2010_2
+    MENUITEM "Office 2010 Sil&ver Theme",   ID_VIEW_APPLOOK_2010_3
+    MENUITEM SEPARATOR
+    MENUITEM "Windows &7",                  ID_VIEW_APPLOOK_WIN7
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "ComTool\n\nComTool\n\n\nComTool.Document\nComTool.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "ComTool"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_DIRECT    "Send the document directly to the default printer without making changes\nQuick Print"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_MAIN_TOOLBAR        "Standard"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_APPLOOK_2000    "Activate Office 2000 application look\nOffice 2000 Look"
+    ID_VIEW_APPLOOK_XP      "Activate Office XP application look\nOffice XP Look"
+    ID_VIEW_APPLOOK_2003    "Activate Office 2003 application look\nOffice 2003 Look"
+    ID_VIEW_APPLOOK_WIN_XP  "Activate Windows native application look\nWindows Native Look"
+    ID_VIEW_APPLOOK_VS2005  "Activate Visual Studio 2005 application look\nVS 2005 Look"
+    ID_VIEW_APPLOOK_2007    "Activate Office 2007 application look\nOffice 2007 Look (Blue)"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_APPLOOK_2007_1  "Activate Office 2007 application look\nOffice 2007 Look (Black)"
+    ID_VIEW_APPLOOK_2007_2  "Activate Office 2007 application look\nOffice 2007 Look (Silver)"
+    ID_VIEW_APPLOOK_2007_3  "Activate Office 2007 application look\nOffice 2007 Look (Aqua)"
+    ID_VIEW_APPLOOK_VS2008  "Activate Visual Studio 2008 application look\nVS 2008 Look"
+    ID_VIEW_APPLOOK_VS2010  "Activate Visual Studio 2010 application look\nVS 2010 Look"
+    ID_VIEW_APPLOOK_2010_1  "Activate Office 2010 application look\nOffice 2010 Look (Blue)"
+    ID_VIEW_APPLOOK_2010_2  "Activate Office 2010 application look\nOffice 2010 Look (Black)"
+    ID_VIEW_APPLOOK_2010_3  "Activate Office 2010 application look\nOffice 2010 Look (Silver)"
+    ID_VIEW_APPLOOK_WIN7    "Activate Windows 7 application look\nWindows 7 Look"
+    ID_VIEW_APPLOOK_VS2012_LIGHT 
+                            "Activate Visual Studio 2012 Light application look\nVS 2012 Look Light"
+    ID_VIEW_APPLOOK_VS2012_DARK 
+                            "Activate Visual Studio 2012 Dark application look\nVS 2012 Look Dark"
+    ID_VIEW_PROPERTIES      "Show or hide the property grid\nToggle Property Grid"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_WORKSPACE       "Show or hide the workspace bar\nToggle Workspace"
+    ID_VIEW_OUTPUT          "Show or hide the output bar\nToggle Output"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_WORKSPACE2      "Show or hide the second workspace bar\nToggle Second Workspace"
+END
+
+STRINGTABLE
+BEGIN
+    ID_TOOLS_OPTIONS        "Changes application options\nOptions"
+    ID_STATUSBAR_PANE1      "Status bar indicator 1"
+    ID_STATUSBAR_PANE2      "Status bar indicator 2"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1251)
+#include "res\ComTool.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#include "res\BCGSoft_ribbon\ComTool.ribbon.rc2"  // BCG Designer resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

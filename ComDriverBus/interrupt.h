@@ -1,0 +1,12 @@
+
+#ifndef _COM422_INTERRUPT_H_
+#define _COM422_INTERRUPT_H_
+
+NTSTATUS InterruptCreate(IN WDFDEVICE Device);
+FN_BUS_ENABLE_TRANSMIT EnableTransmit;	// 
+
+EVT_WDF_INTERRUPT_SYNCHRONIZE EvtEnableInterrupt;
+EVT_WDF_INTERRUPT_ISR EvtInterruptIsr;
+EVT_WDF_INTERRUPT_DPC EvtInterruptDpc;
+
+#endif	// _COM422_INTERRUPT_H_

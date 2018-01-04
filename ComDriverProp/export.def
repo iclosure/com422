@@ -1,0 +1,8 @@
+LIBRARY	"crdcomprop"
+
+;SECTIONS
+;	.shared READ WRITE SHARED
+	
+EXPORTS
+	ComBusPropPageProvider
+	ComPortPropPageProvider

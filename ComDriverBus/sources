@@ -1,0 +1,48 @@
+TARGETNAME= CrdSerBus
+TARGETTYPE= DRIVER
+
+MSC_WARNING_LEVEL= /W3 /WX
+
+KMDF_VERSION_MAJOR= 1
+KMDF_VERSION_MINOR= 9
+
+INF_NAME= $(TARGETNAME)
+
+MISCFILES= $(OBJ_PATH)\$(O)\$(INF_NAME).inf
+NTTARGETFILES =
+
+!IF !$(FREEBUILD)
+DEBUG_STUF=d
+!ENDIF
+
+TARGETLIBS= $(TARGETLIBS) \
+# add krnlcom library
+	$(SMARTKITS_DIRS)\Kernel\krnlcom\lib\$(O)\krnlcom$(DEBUG_STUF).lib
+
+C_DEFINES= $(C_DEFINES) \
+# Enable WDF module codes
+	-DKERNEL_FRAMEWORK_WDF \
+	-DCOM422_DRIVER_BUS
+
+!IF !$(FREEBUILD)
+LINKER_FLAGS= -MAP:$(TARGETNAME).map
+!ENDIF
+
+INCLUDES= $(INCLUDES) \
+	$(SMARTKITS_DIRS)\kernel\krnlcom\include 
+
+SOURCES= \
+	ComDriverBus.rc \
+	addbus.c \
+	buspdo.c \
+	entry.c \
+	filepdo.c \
+	ioctlpdo.c \
+	pnp.c \
+	pnppdo.c \
+	interrupt.c \
+	wmi.c
+	
+PRECOMPILED_INCLUDE= precomp.h
+PRECOMPILED_PCH= precomp.pch
+PRECOMPILED_OBJ= precomp.obj

@@ -1,0 +1,57 @@
+
+#ifndef _COM422_BUS_PDO_DEVICE_H_
+#define _COM422_BUS_PDO_DEVICE_H_
+
+NTSTATUS BusChildListInitialze(
+	IN PWDFDEVICE_INIT DeviceInit);
+
+NTSTATUS BusChildrenPlugin(
+	IN WDFDEVICE Device);
+
+NTSTATUS BusChildrenUnplug(
+	IN WDFDEVICE Device);
+
+NTSTATUS BusChildrenEject(
+	IN WDFDEVICE Device);
+
+NTSTATUS BusPluginDevice(
+	IN WDFDEVICE Device,
+	IN size_t CchHardwareIds,
+	IN __field_bcount(CchHardwareIds) PWCHAR HardwareIds,
+	IN ULONG SerialNo);
+
+NTSTATUS BusUnplugDevice(
+	IN WDFDEVICE Device,
+	IN ULONG SerialNo);
+
+NTSTATUS BusEjectDevice(
+	IN WDFDEVICE Device,
+	IN ULONG SerialNo);
+
+EVT_WDF_CHILD_LIST_CREATE_DEVICE EvtChildListCreatePdoPort;
+EVT_WDF_DEVICE_CONTEXT_CLEANUP EvtPdoPortContextCleanup;
+
+NTSTATUS CreateChildListPdoPort(
+	IN WDFDEVICE Device,
+	IN PWDFDEVICE_INIT DeviceInit,
+	IN PPDO_IDENTIFICATION_DESCRIPTION IdentificationDescription);
+
+EVT_WDF_CHILD_LIST_SCAN_FOR_CHILDREN EvtChildListScanForChildren;
+EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_COPY EvtChildListIdentificationDescriptionCopy;
+EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_DUPLICATE EvtChildListIdentificationDescriptionDuplicate;
+EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_CLEANUP EvtChildListIdentificationDescriptionCleanup;
+EVT_WDF_CHILD_LIST_IDENTIFICATION_DESCRIPTION_COMPARE EvtChildListIdentificationDescriptionCompare;
+EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_COPY EvtChildListAddressDescriptionCopy;
+EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_DUPLICATE EvtChildListAddressDescriptionDuplicate;
+EVT_WDF_CHILD_LIST_ADDRESS_DESCRIPTION_CLEANUP EvtChildListAddressDescriptionCleanup;
+EVT_WDF_CHILD_LIST_DEVICE_REENUMERATED EvtChildListDeviceReenumerated;
+
+// PDO event
+EVT_WDF_DEVICE_RESOURCES_QUERY EvtDeviceResourcesQueryPdo;
+EVT_WDF_DEVICE_RESOURCE_REQUIREMENTS_QUERY EvtDeviceResourceRequirementsQueryPdo;
+EVT_WDF_DEVICE_EJECT EvtDeviceEjectPdo;
+EVT_WDF_DEVICE_SET_LOCK EvtDeviceSetLockPdo;
+EVT_WDF_DEVICE_ENABLE_WAKE_AT_BUS EvtDeviceEnableWakeAtBusPdo;
+EVT_WDF_DEVICE_DISABLE_WAKE_AT_BUS EvtDeviceDisableWakeAtBusPdo;
+
+#endif	// _COM422_BUS_PDO_DEVICE_H_
